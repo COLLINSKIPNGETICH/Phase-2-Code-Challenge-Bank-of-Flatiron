@@ -1,0 +1,20 @@
+{
+  "name": "@COLLINSKIPNGETICH/Phase-2-Code-Challenge-Bank-of-Flatiron",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/COLLINSKIPNGETICH/Phase-2-Code-Challenge-Bank-of-Flatiron.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/COLLINSKIPNGETICH/Phase-2-Code-Challenge-Bank-of-Flatiron/issues"
+  },
+  "homepage": "https://github.com/COLLINSKIPNGETICH/Phase-2-Code-Challenge-Bank-of-Flatiron#readme"
+}
