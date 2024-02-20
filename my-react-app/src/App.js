@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+// App.js
+import React, { useState, useEffect } from 'react';
+import TransactionTable from './components/TransactionTable';
+import TransactionForm from './components/TransactionForm';
+import SearchBar from './components/SearchBar';
 
-function App() {
+const App = () => {
+  const [transactions, setTransactions] = useState([]);
+
+  useEffect(() => {
+    // Fetch data from the local server (http://localhost:8001/transactions)
+    fetch('http://localhost:8001/transactions')
+      .then((response) => response.json())
+      .then((data) => setTransactions(data));
+  }, []);
+
+  const addTransaction = (newTransaction) => {
+    setTransactions([...transactions, { id: transactions.length + 1, ...newTransaction }]);
+  };
+
+  const filterTransactions = (searchTerm) => {
+    // Implement logic to filter transactions based on the search term
+    // Update the transactions state accordingly
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1>My Bank App</h1>
+      <TransactionTable transactions={transactions} />
+      <TransactionForm addTransaction={addTransaction} />
+      <SearchBar filterTransactions={filterTransactions} />
     </div>
   );
-}
+};
 
 export default App;
